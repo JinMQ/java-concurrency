@@ -17,6 +17,7 @@ import lombok.extern.slf4j.Slf4j;
  * static方法interrupted() 给线程终端标志,中断标志位会被清除; 在wait(),join(),sleep()阻塞方法的InterruptedException中,标志位会被清空,在异常中需要手动interrupted()中断线程
  * isInterrupted() 给线程终端标志,终端标志位不会被清除; true
  * 注: 在异常中清除标志位作用: 防止拿到资源(锁)的线程被立即中断,无法再对该线程进行干预问题,因此在异常中应先释放该线程的资源,然后中断该线程.
+ *
  */
 @Slf4j
 public class CreateThreadDemo {
