@@ -1,0 +1,20 @@
+
+线程间协作是等待和通知.
+    wait()
+    notify()/notifyAll()
+
+等待和通知的标准范式
+等待:
+syn(对象){
+    while(条件不满足){
+        对象.wait(); // 释放锁
+    }
+    // 业务逻辑
+}
+通知:
+syn(对象){
+    // 业务逻辑,改变条件
+    对象.notify/notifyAll(); // 不会释放锁,do sth运行完毕才会释放锁.notify/notifyAll一般放在syn块的底部
+    // do sth;
+}
+wait/notify/notifyAll都是Object的方法,并且Thread方法
